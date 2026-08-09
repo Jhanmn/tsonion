@@ -6,23 +6,23 @@ export function createSpecificAddress(patternToMatch: string, mode: matchingMode
     const pattern = patternToMatch.toLowerCase();
     while(true){
         const result = create();
-        console.log(result);
-        switch (mode){
-            case matchingMode.contains:
-                if(result.address.includes(pattern)){
-                    return result;
-                }
-                continue;
-            case matchingMode.startsWith:
-                if(result.address.startsWith(pattern)){
-                    return result;
-                }
-                continue;
-            case matchingMode.endsWith:
-                if(result.address.endsWith(pattern)){
-                    return result;
-                }
+        if(evaluateResult(result, pattern, mode)){
+            return result;
         }
+    }
+}
+
+function evaluateResult(result: Result, pattern: string, mode: matchingMode): boolean{
+    switch (mode){
+        case matchingMode.contains:
+            return result.address.includes(pattern);
+
+        case matchingMode.startsWith:
+            return result.address.startsWith(pattern);
+
+        case matchingMode.endsWith:
+            return result.address.endsWith(pattern);
+
     }
 }
 

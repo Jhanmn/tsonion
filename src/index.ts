@@ -20,6 +20,3 @@ export function create(): Result {
 export function createFor(pattern: string, mode: matchingMode): Result{
     return createSpecificAddress(pattern, mode)
 }
-
-console.log("start creating addresses")
-console.log(`found ${createFor("mqd", matchingMode.endsWith)}`)
