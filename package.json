@@ -1,6 +1,6 @@
 {
   "name": "@jhanmn/tsonion",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "TypeScript package for generating Tor v3 (.onion) vanity addresses and keys.",
   "author": "jhanmn",
   "main": "dist/index.js",
