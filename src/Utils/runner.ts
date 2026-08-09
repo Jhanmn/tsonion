@@ -1,11 +1,11 @@
-﻿import {create} from "../index";
-import {Result} from "./Result";
+﻿import {Result} from "./Result";
 import {matchingMode} from "./matchingmode";
+import {generate} from "../onion/generate";
 
 export function createSpecificAddress(patternToMatch: string, mode: matchingMode): Result {
     const pattern = patternToMatch.toLowerCase();
     while(true){
-        const result = create();
+        const result = generate();
         if(evaluateResult(result, pattern, mode)){
             return result;
         }
