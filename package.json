@@ -1,8 +1,12 @@
 {
-  "name": "tsonion",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@jhanmn/tsonion",
+  "version": "0.0.9",
+  "description": "TypeScript package for generating Tor v3 (.onion) vanity addresses and keys.",
+  "author": "jhanmn",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "license": "MIT",
   "scripts": {
     "build": "tsc"
   },
@@ -12,6 +16,5 @@
   },
   "devDependencies": {
     "typescript": "^5.5.3"
-  },
-  "private": true
+  }
 }
