@@ -1,11 +1,74 @@
 # tsonion
 
-Simple Typescript lib for v3 .onion address generation.
+***Simple Typescript lib for v3 .onion address generation.***
 
-Implementation generates one random .onion address and provides it public and private key and its fully qualified address, ending in .onion. Lib also contain a simple "Runner" file, that runs the generation in a loop, till a vanity address with a matching pattern is found.
+## Modes
+**tsonion** spports the following to modes to generate addresses:
+- creation of vanity addresses
+- single random address generation
 
-## Note
-This lib is currently not available on NPM and other package sources. This will happen sometime in the feature. Till then, please manually load it to you project.
+## Install
+Just pull from npm using:
+> `npm i @jhanmn/tsonion`
+
+Native deno support might come in the future.
+
+## Usage
+To create a simple .onion address, just call the create method.
+```js
+import {create } from "@jhanmn/tsonion";
+
+const result = create();
+```
+
+For vanity addresses, use the createFor method, passing the pattern to match and a setting to tell the package how to match the pattern.
+
+```js
+import {createFor, matchingMode } from "@jhanmn/tsonion";
+
+const vanityResult = createFor("abc", matchingMode.startsWith);
+```
+Possible options for how to match the pattern:
+```js
+export enum matchingMode{
+    /**
+     * pattern must be detected at a random place. position does not matter.
+     *
+     * this will take significant less time to compute
+     */
+    contains,
+    /**
+     * pattern must be detected at the start of the sequence - this is most likely what you want
+     *
+     * YOURPATTERN[...].onion
+     */
+    startsWith,
+    /**
+     * pattern must be detected on the end of the sequence, before ".onion"
+     *
+     * [...]YOURPATTERN.onion
+     *
+     * endsWith MUST end on 'q'
+     */
+    endsWith,
+}
+```
+
+Both ways will return a Result object defined like this:
+```js
+class Result {
+    privateKey: string;
+    publicKey: string;
+    address: string;
+
+    /**
+     * returns the address property of this result class with an appended ".onion" string
+     */
+    getFullAddress():string {
+        return `${this.address}.onion`;
+    }
+}
+```
 
 ## References
 
