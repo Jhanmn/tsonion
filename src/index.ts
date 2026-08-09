@@ -3,6 +3,9 @@ import {generate} from "./onion/generate";
 import {createSpecificAddress} from "./Utils/runner";
 import {matchingMode} from "./Utils/matchingmode";
 
+export {matchingMode} from "./Utils/matchingmode";
+export {Result} from "./Utils/Result";
+
 /**
  * Computes one random onion v3 address
  * @returns an instance of Result containing all necessary information
