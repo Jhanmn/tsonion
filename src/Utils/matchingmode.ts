@@ -1,7 +1,7 @@
 ﻿/**
  * defines how the Runner performs the sequence matching
  */
-export enum matchingMode{
+export enum matchingMode {
     /**
      * pattern must be detected at a random place. position does not matter.
      *

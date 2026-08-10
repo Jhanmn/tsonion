@@ -1,22 +1,23 @@
 {
-  "name": "@jhanmn/tsonion",
-  "version": "0.0.11",
-  "description": "TypeScript package for generating Tor v3 (.onion) vanity addresses and keys.",
-  "author": "jhanmn",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
-  "dependencies": {
-    "@noble/ed25519": "^3.1.0",
-    "@noble/hashes": "^2.2.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.5.3"
-  }
+    "name": "@jhanmn/tsonion",
+    "version": "0.0.11",
+    "description": "TypeScript package for generating Tor v3 (.onion) vanity addresses and keys.",
+    "author": "jhanmn",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@noble/ed25519": "^3.1.0",
+        "@noble/hashes": "^2.2.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.5.3",
+        "prettier": "^3.9.6"
+    }
 }

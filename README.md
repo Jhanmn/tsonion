@@ -1,34 +1,42 @@
 # tsonion
 
-***Simple Typescript lib for v3 .onion address generation.***
+_**Simple Typescript lib for v3 .onion address generation.**_
 
 ## Modes
+
 **tsonion** spports the following to modes to generate addresses:
+
 - creation of vanity addresses
 - single random address generation
 
 ## Install
+
 Just pull from npm using:
+
 > `npm i @jhanmn/tsonion`
 
 Native deno support might come in the future.
 
 ## Usage
-To create a simple .onion address, just call the create method.
-```js
-import {create } from "@jhanmn/tsonion";
 
-const result = create();
+To create a simple .onion address, just call the create method.
+
+```js
+import { create } from '@jhanmn/tsonion'
+
+const result = create()
 ```
 
 For vanity addresses, use the createFor method, passing the pattern to match and a setting to tell the package how to match the pattern.
 
 ```js
-import {createFor, matchingMode } from "@jhanmn/tsonion";
+import { createFor, matchingMode } from '@jhanmn/tsonion'
 
-const vanityResult = createFor("abc", matchingMode.startsWith);
+const vanityResult = createFor('abc', matchingMode.startsWith)
 ```
+
 Possible options for how to match the pattern:
+
 ```js
 export enum matchingMode{
     /**
@@ -55,6 +63,7 @@ export enum matchingMode{
 ```
 
 Both ways will return a Result object defined like this:
+
 ```js
 class Result {
     privateKey: string;

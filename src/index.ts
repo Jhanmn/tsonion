@@ -1,17 +1,17 @@
-import {Result} from "./Utils/Result";
-import {generate} from "./onion/generate";
-import {createSpecificAddress} from "./Utils/runner";
-import {matchingMode} from "./Utils/matchingmode";
+import { Result } from './Utils/Result'
+import { generate } from './onion/generate'
+import { createSpecificAddress } from './Utils/runner'
+import { matchingMode } from './Utils/matchingmode'
 
-export {matchingMode} from "./Utils/matchingmode";
-export {Result} from "./Utils/Result";
+export { matchingMode } from './Utils/matchingmode'
+export { Result } from './Utils/Result'
 
 /**
  * Computes one random onion v3 address
  * @returns an instance of Result containing all necessary information
  */
 export function create(): Result {
-    return generate();
+    return generate()
 }
 
 /**
@@ -20,6 +20,6 @@ export function create(): Result {
  * @param mode specifies, how the sequence has to occur
  * @returns an instance of Result
  * */
-export function createFor(pattern: string, mode: matchingMode): Result{
+export function createFor(pattern: string, mode: matchingMode): Result {
     return createSpecificAddress(pattern, mode)
 }
