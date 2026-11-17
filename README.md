@@ -4,7 +4,7 @@ _**Simple Typescript lib for v3 .onion address generation.**_
 
 ## Modes
 
-**tsonion** spports the following to modes to generate addresses:
+**tsonion** spports the following two modes to generate addresses:
 
 - creation of vanity addresses
 - single random address generation
